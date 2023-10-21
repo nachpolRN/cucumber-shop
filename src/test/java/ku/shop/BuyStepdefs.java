@@ -1,5 +1,7 @@
+//6410406568 Nachpol Ruangnam
 package ku.shop;
 
+import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
@@ -31,6 +33,11 @@ public class BuyStepdefs {
     @Then("total should be {float}")
     public void total_should_be(double total) {
         assertEquals(total, order.getTotal());
+    }
+
+    @And("stock {string} should be {int}")
+    public void stockOfShouldBe(String product, int stock) {
+        assertEquals(stock, catalog.getProduct(product).getStock());
     }
 }
 
